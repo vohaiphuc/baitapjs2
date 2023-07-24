@@ -21,6 +21,198 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
+    <section id="bai1">
+      <div class="container">
+        <h2>Bài 1: Quản lý tuyển sinh</h2>
+        <div class="row">
+          <div class="form-group col-4">
+            <label for=""></label>
+            <input
+              type="text"
+              class="form-control"
+              id="b1-diem-chuan"
+              placeholder="Điểm chuẩn"
+              value="25"
+            />
+          </div>
+          <div class="form-group col-4">
+            <select
+              class="form-select mt-4"
+              aria-label=".form-select-lg example"
+              id="b1-khu-vuc"
+            >
+              <option disabled selected value="">Chọn khu vực</option>
+              <option value="a">A</option>
+              <option value="b">B</option>
+              <option value="c">C</option>
+              <option value="x">X - không thuộc ưu tiên</option>
+            </select>
+          </div>
+          <div class="form-group col-4">
+            <select
+              class="form-select mt-4"
+              aria-label=".form-select-lg example"
+              id="b1-doi-tuong"
+            >
+              <option disabled selected value="">Chọn đối tượng</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="0">0 - không thuộc ưu tiên</option>
+            </select>
+          </div>
+          <div class="form-group col-4">
+            <label for=""></label>
+            <input
+              type="number"
+              class="form-control"
+              id="b1-diem-mon-1"
+              placeholder="Điểm môn thứ 1"
+              value="7"
+            />
+          </div>
+          <div class="form-group col-4">
+            <label for=""></label>
+            <input
+              type="number"
+              class="form-control"
+              id="b1-diem-mon-2"
+              placeholder="Điểm môn thứ 2"
+              value="8"
+            />
+          </div>
+          <div class="form-group col-4">
+            <label for=""></label>
+            <input
+              type="number"
+              class="form-control"
+              id="b1-diem-mon-3"
+              placeholder="Điểm môn thứ 3"
+              value="9"
+            />
+          </div>
+          <div class="result col-6">
+            <button class="btn btn-danger" onclick="tinhBai1()">Kết quả</button>
+            <p class="text-danger" id="b1-result"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="bai2">
+      <div class="container">
+        <h2>Bài 2: Tính tiền điện</h2>
+        <div class="row">
+          <div class="form-group col-6">
+            <input
+              type="text"
+              class="form-control"
+              id="b2-ten"
+              placeholder="Họ và tên"
+            />
+          </div>
+          <div class="form-group col-6">
+            <input
+              type="number"
+              class="form-control"
+              id="b2-so-kw"
+              placeholder="Số kW điện tiêu thụ"
+            />
+          </div>
+          <div class="col-12"></div>
+          <div class="result col-6">
+            <button class="btn btn-danger" onclick="tinhBai2()">Kết quả</button>
+            <p class="text-danger" id="b2-result"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="bai3">
+      <div class="container">
+        <h2>Bài 3: Tính thuế thu nhập cá nhân</h2>
+        <i class="mb-5">Sử dụng phương pháp tính lũy kế</i>
+        <div class="row">
+          <div class="form-group col-4">
+            <input
+              type="text"
+              class="form-control"
+              id="b3-ten"
+              placeholder="Họ và tên"
+            />
+          </div>
+          <div class="form-group col-4">
+            <input
+              type="number"
+              class="form-control"
+              id="b3-thu-nhap"
+              placeholder="Tổng thu nhập năm"
+              value="120000000"
+            />
+          </div>
+          <div class="form-group col-4">
+            <input
+              type="number"
+              class="form-control"
+              id="b3-so-nguoi-phu-thuoc"
+              placeholder="Số người phụ thuộc"
+            />
+          </div>
+          <div class="result col-6">
+            <button class="btn btn-danger" onclick="tinhBai3()">Kết quả</button>
+            <p class="text-danger" id="b3-result"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="bai4">
+      <div class="container">
+        <h2>Bài 4: Tính tiền cáp</h2>
+        <div class="row">
+          <div class="form-group col-6">
+            <select
+              class="form-select form-select-lg"
+              aria-label=".form-select-lg example"
+              id="b4-loai-khach"
+              onchange="bai4_toggleKetNoi(this)"
+            >
+              <option selected disabled value="">Chọn loại khách hàng</option>
+              <option value="nd">Nhà dân</option>
+              <option value="dn">Doanh nghiệp</option>
+            </select>
+          </div>
+          <div class="form-group col-6">
+            <input
+              type="text"
+              class="form-control"
+              id="b4-ma-khach-hang"
+              placeholder="Nhập mã khách hàng"
+              value="ab12"
+            />
+          </div>
+          <div class="form-group col-6">
+            <input
+              type="number"
+              class="form-control"
+              id="b4-so-kenh"
+              placeholder="Số kênh"
+            />
+          </div>
+          <div class="form-group col-6">
+            <input
+              type="number"
+              class="form-control"
+              id="b4-so-ket-noi"
+              placeholder="Số kết nối"
+              style="display: none"
+            />
+          </div>
+          <div class="result col-6">
+            <button class="btn btn-danger" onclick="tinhBai4()">Kết quả</button>
+            <p class="text-danger" id="b4-result"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -39,6 +231,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom JS -->
-    <link rel="stylesheet" href="./index.js" />
+    <script src="./index.js"></script>
   </body>
 </html>
